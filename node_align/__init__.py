@@ -132,7 +132,7 @@ class NODE_MT_align(Menu):
 
     @classmethod
     def poll(cls, context):
-        return bool(context.selected_nodes)
+        return context.space_data.type == 'NODE_EDITOR' and bool(context.selected_nodes)
 
     def draw(self, context):
         layout = self.layout
